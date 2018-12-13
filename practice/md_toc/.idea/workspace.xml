@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/md_toc$main.coverage" NAME="main Coverage Results" MODIFIED="1544700695730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/md_toc$main.coverage" NAME="main Coverage Results" MODIFIED="1544711095364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="433442145">
@@ -28,28 +28,28 @@
         <counts>
           <entry key="log" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="4" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="log" value="46" />
           <entry key="md" value="53" />
-          <entry key="py" value="3123" />
+          <entry key="py" value="3324" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="53" />
           <entry key="PLAIN_TEXT" value="46" />
-          <entry key="Python" value="3123" />
+          <entry key="Python" value="3324" />
         </counts>
       </usages-collector>
     </session>
@@ -59,16 +59,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+            <state relative-caret-position="133">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <marker date="1544700833028" expanded="true" signature="190:191" ph="..." />
-                <marker date="1544700833028" expanded="true" signature="1211:1525" ph="..." />
-                <marker date="1544700833028" expanded="true" signature="1710:3841" ph="..." />
-                <marker date="1544700833028" expanded="true" signature="2829:2831" ph="..." />
-                <marker date="1544700833028" expanded="true" signature="3401:3614" ph="..." />
-                <marker date="1544700833028" expanded="true" signature="3630:3633" ph="..." />
               </folding>
             </state>
           </provider>
@@ -89,6 +83,7 @@
       <find>li</find>
       <find>print</find>
       <find>s_print</find>
+      <find>dat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,8 +105,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="450" />
-    <option name="y" value="8" />
+    <option name="x" value="402" />
+    <option name="y" value="25" />
     <option name="width" value="946" />
     <option name="height" value="775" />
   </component>
@@ -206,7 +201,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="450" y="8" width="946" height="775" extended-state="0" />
+    <frame x="402" y="25" width="946" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22799097" />
@@ -223,8 +218,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="调试" order="11" weight="0.3296875" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32819724" />
+      <window_info anchor="bottom" id="调试" order="11" weight="0.328125" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.328125" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -268,13 +263,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
+          <line>45</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="2" />
+          <line>173</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -308,18 +303,19 @@
     <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/site-packages/chardet/compat.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/encodings/cp1254.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="14" column="65" lean-forward="true" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+        <state relative-caret-position="133">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-            <marker date="1544700833028" expanded="true" signature="190:191" ph="..." />
-            <marker date="1544700833028" expanded="true" signature="1211:1525" ph="..." />
-            <marker date="1544700833028" expanded="true" signature="1710:3841" ph="..." />
-            <marker date="1544700833028" expanded="true" signature="2829:2831" ph="..." />
-            <marker date="1544700833028" expanded="true" signature="3401:3614" ph="..." />
-            <marker date="1544700833028" expanded="true" signature="3630:3633" ph="..." />
           </folding>
         </state>
       </provider>
