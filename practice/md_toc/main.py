@@ -96,7 +96,9 @@ class secureIter_C(object):
 	def __init__(self,li=[]):
 		self.lock=threading.Lock()
 		self._it=iter(li)
-	def next(self):
+	def __iter__(self):
+		return self
+	def __next__(self):
 		self.lock.acquire()
 		try:
 			t=next(self._it)
@@ -133,13 +135,13 @@ class threadList_c():
 	def __init__(self,thread_c,cnt, *args, **kwargs):
 		self.thread_list=[]
 		for i in range(cnt):
-			self.thread_list.append(thread_c(id=i,*args, **kwargs))
+			self.thread_list.append(thread_c(i,*args, **kwargs))
 	def start(self):
 		for i in self.thread_list:
-			self.thread_list.start()
+			i.start()
 	def join(self):
 		for i in self.thread_list:
-			self.thread_list.join()
+			i.join()
 
 
 ###############################################################################
