@@ -11,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/md_toc$main.coverage" NAME="main Coverage Results" MODIFIED="1544715828905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/md_toc$main.coverage" NAME="main Coverage Results" MODIFIED="1544721618241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="433442145">
@@ -44,48 +44,39 @@
           <entry key="cmd" value="9" />
           <entry key="log" value="46" />
           <entry key="md" value="53" />
-          <entry key="py" value="3679" />
+          <entry key="py" value="3741" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="53" />
           <entry key="PLAIN_TEXT" value="55" />
-          <entry key="Python" value="3679" />
+          <entry key="Python" value="3741" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="198" column="32" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
+            <state relative-caret-position="136">
+              <caret line="195" column="40" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <marker date="1544716754225" expanded="true" signature="3232:3455" ph="..." />
-                <marker date="1544716754225" expanded="true" signature="3524:3624" ph="..." />
+                <marker date="1544722570079" expanded="true" signature="3246:3469" ph="..." />
+                <marker date="1544722570079" expanded="true" signature="3538:3638" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/md_toc.cmd">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
               <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/Users/Desktop/Atom/ocr.cmd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="6" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -117,8 +108,8 @@
       <list>
         <option value="$PROJECT_DIR$/a.log" />
         <option value="$PROJECT_DIR$/a.md" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/md_toc.cmd" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -129,9 +120,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="280" />
-    <option name="y" value="95" />
-    <option name="width" value="946" />
+    <option name="x" value="-7" />
+    <option name="width" value="905" />
     <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -225,10 +215,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="371" y="0" width="946" height="775" extended-state="0" />
+    <frame x="-7" y="0" width="905" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22799097" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23905325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -282,17 +272,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>194</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/a.log" />
     <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/threading.py">
@@ -336,18 +315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="198" column="32" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-            <marker date="1544716754225" expanded="true" signature="3232:3455" ph="..." />
-            <marker date="1544716754225" expanded="true" signature="3524:3624" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Users/Desktop/Atom/Edit.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-683">
@@ -366,6 +333,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="195" column="40" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+            <marker date="1544722570079" expanded="true" signature="3246:3469" ph="..." />
+            <marker date="1544722570079" expanded="true" signature="3538:3638" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

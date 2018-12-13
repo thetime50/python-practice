@@ -72,14 +72,14 @@ class fileSubstrFliter_C:
 		pl = [os.path.normpath(i) for i in pl]
 		self._path_list_process(self.md_list, pl)
 
-	def _ismd(self, sti, substr):
-		return os.path.isfile(sti) and os.path.splitext(sti)[1].lower() == substr
+	def _is_subname(self, sti, subname):
+		return os.path.isfile(sti) and os.path.splitext(sti)[1].lower() == subname
 
 	def _path_list_process(self, md_list, path_list):
 		if self._exit:
 			return
 		for i in path_list:
-			if self._ismd(i, self._substr):
+			if self._is_subname(i, self._substr):
 				if len(md_list) >= self._filesmax:
 					print(getInfoHead(2) + 'file is too many:', len(md_list))
 					print('current file:', i)
@@ -171,7 +171,7 @@ class addTocListThread_C(threading.Thread):
 				s_thindPrint(3, i)
 
 
-class threadList_c():
+class threadList_C():
 	def __init__(self, thread_c, cnt, *args, **kwargs):
 		self.thread_list = []
 		for i in range(cnt):
@@ -193,11 +193,14 @@ too_many_file = 50
 thread_cnt = 3
 fsf = fileSubstrFliter_C(sys.argv[1:], '.md', too_many_file)
 #fsf = fileSubstrFliter_C('E:\\Users\\Desktop\\test', '.md', too_many_file)
+s_print('Markdowm file:',len(fsf.md_list))
 for i in fsf.md_list:
 	s_print(i)
 
+s_print('add tod:')
+
 sfsf = secureIter_C(fsf.md_list)
 
-toc_thread_list = threadList_c(addTocListThread_C, thread_cnt, sfsf)
+toc_thread_list = threadList_C(addTocListThread_C, thread_cnt, sfsf)
 toc_thread_list.start()
 toc_thread_list.join()
