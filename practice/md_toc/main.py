@@ -6,6 +6,7 @@ import time
 import os
 import threading
 
+
 def md_add_toc_list(fname):
 	f = open(fname, 'rb')
 	dect = chardet.detect(f.read())
@@ -13,10 +14,8 @@ def md_add_toc_list(fname):
 	# s_print(threading.current_thread().getName() + \
 	#		'|\033[1;36;m info \033[0m! ', dect)
 	if dect['encoding'] is None or dect['confidence'] < 0.8:
-		s_print(threading.current_thread().getName() + \
-				'|\033[1;36;m info \033[0m! file detect fail:\n\t',\
-				fname,'\n\t', dect)
-		#return
+		s_thindPrint(1, 'file detect fail:\n\t', fname, '\n\t', dect)
+	# return
 	f = open(fname, 'r+', encoding=dect['encoding'])
 	dat = f.readlines()
 
@@ -82,7 +81,7 @@ class fileSubstrFliter_C:
 		for i in path_list:
 			if self._ismd(i, self._substr):
 				if len(md_list) >= self._filesmax:
-					print('\033[1;32;m warning \033[0m!file is too many:', len(md_list))
+					print(getInfoHead(2) + 'file is too many:', len(md_list))
 					print('current file:', i)
 					cont = input('Dou you wanna continue?(yes)')
 					if cont == 'yes':
@@ -136,9 +135,26 @@ class securefun_C():
 s_print = securefun_C(print)
 
 
+def getInfoHead(itype):
+	head_list = [
+		'',
+		'\033[1;36;m info \033[0m',
+		'\033[1;32;m warning \033[0m',
+		'\033[1;31;m error \033[0m'
+	]
+	if type(itype) != type(1) or itype not in range(len(head_list)):
+		itype = 0
+	return head_list[itype]
+
+
+def s_thindPrint(head, *args, **kwargs):
+	if type(head) != type(''):
+		head = getInfoHead(head)
+	s_print(threading.current_thread().getName() + head, *args, **kwargs)
+
+
 class addTocListThread_C(threading.Thread):
 	def __init__(self, id, file_name_iter):
-		# threading.Thread.__init__(name='addTocListThread %d'%(self.ident))
 		threading.Thread.__init__(self)
 		self._id = id
 		self.setName('atlt %d' % (self._id))
@@ -147,7 +163,12 @@ class addTocListThread_C(threading.Thread):
 	def run(self):
 		for i in self._file_name_iter:
 			s_print(self.getName() + '| file:', i)
-			md_add_toc_list(i)
+			try:
+				md_add_toc_list(i)
+			except:
+				for ei in sys.exc_info():
+					s_thindPrint(3,ei)
+				s_thindPrint(3, i)
 
 
 class threadList_c():
