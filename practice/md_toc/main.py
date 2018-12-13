@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+import sys
 import time
 import os
 import threading
@@ -104,13 +105,55 @@ class secureIter_C(object):
 		return t
 
 class securefun_C():
-	pass
+	def __init__(self,fun):
+		self._lock=threading.Lock()
+		self._fun=fun
+	def __call__(self, *args, **kwargs):
+		self._lock.acquire()
+		ret = self._fun( *args, **kwargs)
+		self._lock.release()
+		return ret
+
+s_print=securefun_C(print)
+
+class addTocListThread_C(threading.Thread):
+	def __init__(self,id,file_name_iter):
+		#threading.Thread.__init__(name='addTocListThread %d'%(self.ident))
+		threading.Thread.__init__(self)
+		self._id=id
+		self.setName('atlt %d'%(self._id))
+		self._file_name_iter=file_name_iter
+
+	def run(self):
+		for i in self._file_name_iter:
+			s_print(self.getName()+'| file:',i)
+			md_add_toc_list(i)
+
+class threadList_c():
+	def __init__(self,thread_c,cnt, *args, **kwargs):
+		self.thread_list=[]
+		for i in range(cnt):
+			self.thread_list.append(thread_c(id=i,*args, **kwargs))
+	def start(self):
+		for i in self.thread_list:
+			self.thread_list.start()
+	def join(self):
+		for i in self.thread_list:
+			self.thread_list.join()
+
+
 ###############################################################################
 ##main
 ###############################################################################
 too_many_file = 50
-fsf = fileSubstrFliter_C(['E:/Users/Desktop/Atom'], '.md', too_many_file)
+thread_cnt=3
+#fsf = fileSubstrFliter_C(sys.argv[1:], '.md', too_many_file)
+fsf = fileSubstrFliter_C('E:\\Users\\Desktop\\Note', '.md', too_many_file)
 for i in fsf.md_list:
-	print(i)
+	s_print(i)
 
 sfsf = secureIter_C(fsf.md_list)
+
+toc_thread_list=threadList_c(addTocListThread_C,thread_cnt,sfsf)
+toc_thread_list.start()
+toc_thread_list.join()
