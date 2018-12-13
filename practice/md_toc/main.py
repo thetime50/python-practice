@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 import re
+import chardet
 import sys
 import time
 import os
 import threading
 
 def md_add_toc_list(fname):
-	f = open(fname, 'r+')
+	f= open(fname,'rb')
+	det=chardet.detect(f.read())
+	f.close()
+
+	f = open(fname, 'r+',encoding=det['encoding'])
 	dat = f.readlines()
 
 	toc_start = None
