@@ -191,8 +191,8 @@ class threadList_c():
 ###############################################################################
 too_many_file = 50
 thread_cnt = 3
-# fsf = fileSubstrFliter_C(sys.argv[1:], '.md', too_many_file)
-fsf = fileSubstrFliter_C('E:\\Users\\Desktop\\test', '.md', too_many_file)
+fsf = fileSubstrFliter_C(sys.argv[1:], '.md', too_many_file)
+#fsf = fileSubstrFliter_C('E:\\Users\\Desktop\\test', '.md', too_many_file)
 for i in fsf.md_list:
 	s_print(i)
 
