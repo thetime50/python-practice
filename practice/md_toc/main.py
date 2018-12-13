@@ -32,10 +32,15 @@ def md_add_toc_list(fname):
 		if re.match('^\s*- \[[^\]]*\]\(#[^)]*\)$', i) == None:
 			break
 		cnt += 1
+	empty_len = 0
+	for i in dat[toc_start + cnt + 1:]:
+		if re.match('^\s*$', i) == None:
+			break
+		empty_len += 1
 	toc_end = None
-	if toc_start + cnt < len(dat) - 1:
-		if re.match('^\s*\[tocend\]\s*$', dat[toc_start + cnt + 1], re.I):
-			toc_end = toc_start + cnt + 1
+	if toc_start + cnt + empty_len < len(dat) - 1:
+		if re.match('^\s*\[tocend\]\s*$', dat[toc_start + cnt + empty_len + 1], re.I):
+			toc_end = toc_start + cnt + empty_len + 1
 
 	toc_list = []
 	for i in dat:
@@ -43,17 +48,18 @@ def md_add_toc_list(fname):
 			tli = i.split(' ', 1)
 			hn = len(tli[0])
 			hstr = tli[1].strip()
-			toc_list.append('%s- [%s](#%s)\n' % ('  ' * hn, hstr, hstr))
+			toc_list.append('%s- [%s](#%s)\n' % ('  ' * hn, hstr, hstr.replace(' ', '-')))
 
 	f.seek(0, 0)
 	f.writelines(dat[:toc_start])
 	f.write('[TOC]\n')
 	f.writelines(toc_list)
-	f.write('[TOCEND]\n')
+	f.write('\n[TOCEND]\n')
 	if not toc_end:
 		# f.write('\n')
 		toc_end = toc_start
 	f.writelines(dat[toc_end + 1:])
+	f.truncate()
 	f.close()
 
 
@@ -167,7 +173,7 @@ class addTocListThread_C(threading.Thread):
 				md_add_toc_list(i)
 			except:
 				for ei in sys.exc_info():
-					s_thindPrint(3,ei)
+					s_thindPrint(3, ei)
 				s_thindPrint(3, i)
 
 
@@ -192,8 +198,8 @@ class threadList_C():
 too_many_file = 50
 thread_cnt = 3
 fsf = fileSubstrFliter_C(sys.argv[1:], '.md', too_many_file)
-#fsf = fileSubstrFliter_C('E:\\Users\\Desktop\\test', '.md', too_many_file)
-s_print('Markdowm file:',len(fsf.md_list))
+# fsf = fileSubstrFliter_C('E:\\Users\\Desktop\\test', '.md', too_many_file)
+s_print('Markdowm file:', len(fsf.md_list))
 for i in fsf.md_list:
 	s_print(i)
 
