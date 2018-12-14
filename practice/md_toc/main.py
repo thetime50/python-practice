@@ -43,12 +43,19 @@ def md_add_toc_list(fname):
 			toc_end = toc_start + cnt + empty_len + 1
 
 	toc_list = []
+	link_list=[]
 	for i in dat:
 		if re.match('#+ ', i):
 			tli = i.split(' ', 1)
 			hn = len(tli[0])
 			hstr = tli[1].strip()
-			toc_list.append('%s- [%s](#%s)\n' % ('  ' * hn, hstr, hstr.replace(' ', '-')))
+			link = link_modify = hstr.replace(' ', '-')
+			mod_num = 0
+			while link_modify in link_list:
+				mod_num += 1
+				link_modify = link + '-%d' % (mod_num)
+			link_list .append(link_modify)
+			toc_list.append('%s- [%s](#%s)\n' % ('  ' * hn, hstr, link_modify))
 
 	f.seek(0, 0)
 	f.writelines(dat[:toc_start])
